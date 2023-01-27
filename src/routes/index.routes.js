@@ -13,6 +13,11 @@ const router = Router();
 //** Inital Route */
 router.get("/", renderIndex);
 
+router.get("/tasks", async (req, res) => {
+  const tasks = await Task.find().lean();
+  res.json(tasks);
+});
+
 //** Create a new Task route */
 router.post("/tasks/add", createTask);
 
