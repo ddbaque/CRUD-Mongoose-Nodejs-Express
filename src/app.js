@@ -5,10 +5,8 @@ import path from "path";
 import morgan from "morgan";
 import cors from "cors";
 
-const whitelist = ["http://localhost:5500/"];
-
 const app = express();
-app.use(cors({ origin: whitelist }));
+app.use(cors());
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
